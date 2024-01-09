@@ -2,26 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  h1 {
+    @apply text-2xl leading-8;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  a {
+    @apply underline text-blue-700 hover:text-blue-500 w-fit;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  input {
+    @apply p-3 border border-emerald-600 rounded-sm;
+  }
+
+  button {
+    @apply flex p-3 gap-4 justify-center items-center border border-emerald-600 rounded-sm transition-all;
+  }
 }
