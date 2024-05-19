@@ -2,7 +2,7 @@ import mongoClientPromise from '@/lib/database/mongoClientPromise';
 import { MongoDBAdapter } from '@auth/mongodb-adapter';
 import NextAuth from 'next-auth';
 import Google from 'next-auth/providers/google';
-import EmailProvider from 'next-auth/providers/email';
+import NodemailerProvider from 'next-auth/providers/nodemailer';
 
 export const {
   handlers: { GET, POST },
@@ -10,7 +10,7 @@ export const {
 } = NextAuth({
   providers: [
     Google,
-    EmailProvider({
+    NodemailerProvider({
       server: {
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,

@@ -14,7 +14,7 @@ export default function AuthForm({ session }: Props) {
 
   const handleEmailSignIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // prevent form submission from refreshing the page
-    await signIn('email', { email, callbackUrl: '/protected' });
+    await signIn('nodemailer', { email, callbackUrl: '/protected' });
   };
 
   const handleGoogleSignIn = async () => {
